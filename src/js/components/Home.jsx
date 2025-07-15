@@ -5,36 +5,38 @@ import rigoImage from "../../img/rigo-baby.jpg";
 import { Luces } from "./Luces";
 
 //create your first component
-const Home = () => {
 
-	const Colores = () =>{
+const Colores = {
 		LuzRoja:{
-		encendido: "rojo"
-		apagago:"#fffffffff"
+		encendido: "red",
+		apagado:"#ffffffff"
 
-	}
+	},
 	LuzNaranja:{
-		encendido: "naranja"
-		apagago: "#ffffffff"
-	}
+		encendido: "orange",
+		apagado: "#ffffffff"
+	},
 	LuzVerde:{
-		encendido: "verde"
-		apgado: "#ffffffff"
+		encendido: "green",
+		apagado: "#ffffffff"
 	}
 	
-}
+};
+
+
+const Home = () => {
+
 	
 	const [ColorActual,setColorActual] = useState("LuzRoja")
 
-	const color = Colores[ColorActual]
 
 	return (
 		<div className="justify-content-center align-items-center">
 			<div className="container bg bg-dark" style={{width:"60px", height:"100px"}}></div>
-			<div className="container bg bg-" style={{width:"150px", height:"400px"}}>
-				<Luces color="rojo" activo={ColorActual === "rojo"} colores={Colores} onClick={()=>setColorActual("LuzRoja")}/>
-				<Luces color="naranja" activo={ColorActual === "naranja"} colores={Colores} onClick={()=>setColorActual("LuzNaranja")}/>
-				<Luces color="verde" activo={ColorActual === "verde"} colores={Colores} onClick={()=>setColorActual("LuzVerde")}/>
+			<div className="container bg bg-dark" style={{width:"150px", height:"400px"}}>
+				<Luces color="LuzRoja" activo={ColorActual === "LuzRoja"} colores={Colores} onClick={()=>setColorActual("LuzRoja")}/>
+				<Luces color="LuzNaranja" activo={ColorActual === "LuzNaranja"} colores={Colores} onClick={()=>setColorActual("LuzNaranja")}/>
+				<Luces color="LuzVerde" activo={ColorActual === "LuzVerde"} colores={Colores} onClick={()=>setColorActual("LuzVerde")}/>
 			</div>
 
 		</div>
